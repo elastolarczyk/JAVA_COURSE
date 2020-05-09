@@ -12,7 +12,7 @@ public class Main {
         System.out.println("multiply= " + calculator.getMultiplicationResult());
         System.out.println("divide= " + calculator.getDivisionResult());*/
 
-        Person person = new Person();
+        /*Person person = new Person();
         person.setFirstName("");   // firstName is set to empty string
         person.setLastName("");    // lastName is set to empty string
         person.setAge(10);
@@ -23,7 +23,28 @@ public class Main {
         System.out.println("fullName= " + person.getFullName());
         System.out.println("teen= " + person.isTeen());
         person.setLastName("Smith");    // lastName is set to Smith
-        System.out.println("fullName= " + person.getFullName());
+        System.out.println("fullName= " + person.getFullName());*/
 
+        /*BankAccount bankAccount = new BankAccount();
+        bankAccount.setNumber(654789123);
+        bankAccount.setBalance(1500.45);
+        bankAccount.setCustomerName("Ela");
+        bankAccount.setEmail("els@gmail.com");
+        bankAccount.setPhoneNumber(533943033);
+        System.out.println("Name " + bankAccount.getCustomerName() + " balance: " + bankAccount.getBalance());
+
+        bankAccount.deposit(1500);
+
+        bankAccount.withdraw(3500);*/
+        //System.out.println("After -3500: " + bankAccount.getBalance());
+
+        VipCustomers ElaVip = new VipCustomers("Ela", 1500, "els@gmail.com");
+        System.out.println(ElaVip.getName());
+
+        VipCustomers Somebody = new VipCustomers("Jogus", 99999);
+        System.out.println(Somebody.getName() + " " + Somebody.getCreditLimit() + " " + Somebody.getEmailAddress());
+
+        VipCustomers AdrianVip = new VipCustomers();
+        System.out.println(AdrianVip.getName());
     }
 }

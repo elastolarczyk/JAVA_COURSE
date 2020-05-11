@@ -38,13 +38,21 @@ public class Main {
         bankAccount.withdraw(3500);*/
         //System.out.println("After -3500: " + bankAccount.getBalance());
 
-        VipCustomers ElaVip = new VipCustomers("Ela", 1500, "els@gmail.com");
+        /*VipCustomers ElaVip = new VipCustomers("Ela", 1500, "els@gmail.com");
         System.out.println(ElaVip.getName());
 
         VipCustomers Somebody = new VipCustomers("Jogus", 99999);
         System.out.println(Somebody.getName() + " " + Somebody.getCreditLimit() + " " + Somebody.getEmailAddress());
 
         VipCustomers AdrianVip = new VipCustomers();
-        System.out.println(AdrianVip.getName());
+        System.out.println(AdrianVip.getName());*/
+
+        Wall wall = new Wall(5,4);
+        System.out.println("area= " + wall.getArea());
+
+        wall.setHeight(-1.5);
+        System.out.println("width= " + wall.getWidth());
+        System.out.println("height= " + wall.getHeight());
+        System.out.println("area= " + wall.getArea());
     }
 }

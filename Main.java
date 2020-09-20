@@ -1,27 +1,53 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
 
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Hamburger firstHamburger = new Hamburger("Normal", "White", "Chicken", 5.5);
-        System.out.println(firstHamburger.addAdditionsToBurger());
+        int[] integersToArray = getIntegers(5);
+        //printArray(integersToArray);
+        int[] sorted = sortIntegers(integersToArray);
+        printArray(sorted);
+    }
 
-        firstHamburger.add2("Onion", 0.25);
-        firstHamburger.add3("Tomato", 0.35);
+    public static int[] getIntegers(int numberOfIntegers){
+        int[] values = new int[numberOfIntegers];
+        System.out.println("Enter a value of " + numberOfIntegers + ".\r");
+        for(int i = 0; i < values.length; i++){
+            values[i] = scanner.nextInt();
+        }
+        return values;
+    }
 
-        System.out.println(firstHamburger.addAdditionsToBurger());
+    public static void printArray(int[] values){
+        for(int i = 0; i < values.length; i++){
+            System.out.println(i+1 + " has a value: " + values[i]);
+        }
+    }
 
-        HealthyBurger firstHealthyBurger = new HealthyBurger("Chicken",
-                5.55);
-        System.out.println(firstHealthyBurger.addAdditionsToBurger());
-        firstHealthyBurger.add1("Salad", 0.10);
-        firstHealthyBurger.add5("Red Onion", 1.25);
-        firstHealthyBurger.add6("Aspargus", 2.35);
-
-        System.out.println(firstHealthyBurger.addAdditionsToBurger());
-
-        DeluxeHamburger firstDeluxeBurger = new DeluxeHamburger("White bread", "Ham", 8.15);
-        firstDeluxeBurger.addChips("Big chips", 2.5);
-        firstDeluxeBurger.addDrink("Cola", 3.0);
-        firstDeluxeBurger.add1("Tomato", 0.55);
-        System.out.println(firstDeluxeBurger.addAdditionsToBurger());
+    public static int[] sortIntegers(int[] values){
+        /*
+        int[] newSortArray = new int[values.length];
+        for(int i = 0; i < values.length; i++){
+            newSortArray[i] = values[i];
+        }
+        */
+        int[] newSortArray = Arrays.copyOf(values, values.length);
+        boolean flag = true;
+        int tmp;
+        while(flag){
+            flag = false;
+            for(int i = 0; i < newSortArray.length-1; i++){
+                if(newSortArray[i] < newSortArray[i+1]){
+                    tmp = newSortArray[i];
+                    newSortArray[i] = newSortArray[i+1];
+                    newSortArray[i+1] = tmp;
+                    flag = true;
+                }
+            }
+        }
+        return newSortArray;
     }
 }
